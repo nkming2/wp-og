@@ -22,7 +22,7 @@
  * @since      0.1.0
  * @package    WP_OG
  * @subpackage WP_OG/includes
- * @author     Your Name <email@example.com>
+ * @author     Filip Stefansson <filio.stefansson@gmail.com>
  */
 class WP_OG_i18n {
 

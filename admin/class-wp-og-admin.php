@@ -58,8 +58,8 @@ class WP_OG_Admin {
 	 */
 	public function add_options_page() {
 		add_options_page(
-			'Open Graph Tags', 
-			'Open Graph Tags', 
+			__('Open Graph Tags', 'wp-og'), 
+			__('Open Graph Tags', 'wp-og'), 
 			'manage_options', 
 			$this->wp_og,
 			array( $this, 'load_admin_page_content' )
@@ -102,7 +102,7 @@ class WP_OG_Admin {
 		foreach ( $screens as $screen ) {
 			add_meta_box(
 				'wp-og',
-				'Open Graph Tags',
+				__('Open Graph Tags', 'wp-og'),
 				array($this, 'load_meta_box_content'),
 				$screen
 			);

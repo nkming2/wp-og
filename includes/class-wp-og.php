@@ -44,9 +44,9 @@ class WP_OG {
 	 *
 	 * @since    0.1.0
 	 * @access   protected
-	 * @var      string    $wp_og    The string used to uniquely identify this plugin.
+	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
-	protected $wp_og;
+	protected $plugin_name;
 
 	/**
 	 * The current version of the plugin.
@@ -68,7 +68,7 @@ class WP_OG {
 	 */
 	public function __construct() {
 
-		$this->wp_og = 'wp-og';
+		$this->plugin_name = 'wp-og';
 		$this->version = '0.1.0';
 
 		$this->load_dependencies();
@@ -135,7 +135,7 @@ class WP_OG {
 	private function set_locale() {
 
 		$plugin_i18n = new WP_OG_i18n();
-		$plugin_i18n->set_domain( $this->get_wp_og() );
+		$plugin_i18n->set_domain( $this->get_plugin_name() );
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -150,7 +150,7 @@ class WP_OG {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new WP_OG_Admin( $this->get_wp_og(), $this->get_version() );
+		$plugin_admin = new WP_OG_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -171,7 +171,7 @@ class WP_OG {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new WP_OG_Public( $this->get_wp_og(), $this->get_version() );
+		$plugin_public = new WP_OG_Public( $this->get_plugin_name(), $this->get_version() );
 		$this->loader->add_action( 'wp_head', $plugin_public, 'add_og_tags', 0 );
 
 	}
@@ -192,8 +192,8 @@ class WP_OG {
 	 * @since     0.1.0
 	 * @return    string    The name of the plugin.
 	 */
-	public function get_wp_og() {
-		return $this->wp_og;
+	public function get_plugin_name() {
+		return $this->plugin_name;
 	}
 
 	/**

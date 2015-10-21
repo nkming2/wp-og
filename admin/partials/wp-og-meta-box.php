@@ -28,30 +28,36 @@
         <br>
         <input type="text" id="og-title" name="og-title" value="<?php echo esc_attr( $title ) ?>" class="large-text" placeholder="<?php the_title() ?>" />
         <br>
-        <span class="description"><small>A clear title without branding or mentioning the domain itself. Leave empty to use post title.</small></span>
+        <span class="description"><small><?php _e('A clear title without branding or mentioning the domain itself. Leave empty to use post title.', 'wp-og'); ?></small></span>
     </p>
     <p>
-        <label for="og-description">Description:</label>
+        <label for="og-description"><?php _e('Description', 'wp-og'); ?>:</label>
         <br>
         <textarea id="og-description" name="og-description" class="large-text" placeholder="<?php echo get_the_excerpt() ?>" ><?php echo esc_attr( $description ) ?></textarea>
         <br>
         <span class="description">
             <small>
-                A clear description, at least two sentences long. 
-                <?php if( $current_screen->post_type == "post" ): ?> Leave empty to use excerpt. <?php endif; ?>
+                <?php _e('A clear description, at least two sentences long.', 'wp-og'); ?>
+                <?php if( $current_screen->post_type == "post" ): ?> <?php _e('Leave empty to use excerpt.', 'wp-og'); ?> <?php endif; ?>
             </small>
         </span>
     </p>
     <p>
-        <label for="og-image">Image:</label>
+        <label for="og-image"><?php _e('Image:', 'wp-og'); ?></label>
         <br>
         <input type="text" id="og-image" name="og-image" value="<?php echo esc_attr( $image ) ?>" class="regular-text" placeholder="<?php echo get_option('og-image'); ?>"/>
-        <button class="button" id="select_og_image">Select image</button>
+        <button class="button" id="select_og_image"><?php _e('Select image', 'wp-og'); ?></button>
         <br>
-        <span class="description"><small>The minimum image size is 200 x 200 pixels. Leave empty to use the <a href="options-general.php?page=wp-og">default image</a>.</small></span>
+        <span class="description"><small>
+            <?php 
+            $url = "options-general.php?page=wp-og";
+            $link = sprintf( wp_kses( __( 'The minimum image size is 200 x 200 pixels. Leave empty to use the <a href="%s">default image</a>.', 'wp-og' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $url ) );
+            echo $link;
+            ?>
+        </small></span>
     </p>
 
-    <p>If you update these settings you might need to tell Facebook to scrape the new information. </p>
+    <p><?php _e('If you update these settings you might need to tell Facebook to scrape the new information.', 'wp-og'); ?> </p>
     <p>    
-        <a href="https://developers.facebook.com/tools/debug/og/object?q=<?php the_permalink() ?>" class="button-secondary" target="_blank">Open Graph Debugger</a>
+        <a href="https://developers.facebook.com/tools/debug/og/object?q=<?php the_permalink() ?>" class="button-secondary" target="_blank"><?php _e('Open Graph Debugger', 'wp-og'); ?></a>
     </p>
