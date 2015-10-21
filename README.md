@@ -8,7 +8,7 @@ With Open Graph Tags you can define and optimize what the Facebook crawler shoul
 ![](http://filipstefansson.com/wp-og/images/pic01.jpg)
 
 ## What exactly does this plugin do?
-The plugin creates meta tags inside the <head>. This is what Facebook use to decide what to show when someone shares a link from your website. They look like this:
+The plugin creates meta tags inside the `<head>`. This is what Facebook use to decide what to show when someone shares a link from your website. They look like this:
 	
 	<meta property="og:site_name" content="Website Name">
 	<meta property="og:title" content="Article title">
