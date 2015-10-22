@@ -90,7 +90,7 @@
                         </tr>
                         <tr valign="top">
                             <th scope="row">
-                                <label><?php _e('Activate for post types:', 'wp-og'); ?></label>
+                                <label><?php _e('Activate for post types', 'wp-og'); ?></label>
                             </th>
                             <td>
                                 <?php  foreach ( $post_types as $post_type ): ?>
