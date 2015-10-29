@@ -42,5 +42,8 @@ A. Yes. You can choose what post types you want to use og tags on in the setting
 
 == Changelog ==
 
+= 0.1.1 =
+* HOTFIX: Set defaults on plugin activation
+
 = 0.1.0 =
 * Open Graph Tags

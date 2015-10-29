@@ -33,6 +33,8 @@ function activate_wp_og() {
 	WP_OG_Activator::activate();
 }
 
+register_activation_hook( __FILE__, 'activate_wp_og' );
+
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
