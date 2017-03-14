@@ -77,7 +77,7 @@ class WP_OG_Public {
 		// Only show app_id if defined
 		$app_id = get_option('og-app_id');
 		if( !empty($app_id) )
-			echo $this->generate_og_tag('og:app_id', $app_id);
+			echo $this->generate_og_tag('fb:app_id', $app_id);
 	}
 
 	/**

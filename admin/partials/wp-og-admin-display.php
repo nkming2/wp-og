@@ -67,7 +67,7 @@
                         </tr>
                         <tr valign="top">
                             <th scope="row">
-                                <label for="og-app_id"><?php _e('App ID', 'wp-og'); ?> – <small>og:app_id</small></label>
+                                <label for="og-app_id"><?php _e('App ID', 'wp-og'); ?> – <small>fb:app_id</small></label>
                             </th>
                             <td>
                                 <input type="text" name="og-app_id" id="og-app_id" value="<?php echo esc_attr( get_option('og-app_id') ); ?>" class="regular-text"/>
